@@ -1,11 +1,11 @@
 package ca.georgiancollege.comp1011spring2025thursdays1pm_2;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableIntegerValue;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TextArea;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 
 import java.util.ArrayList;
 
@@ -33,6 +33,13 @@ public class CameraController {
 
     @FXML
     private TextArea output;
+
+    @FXML
+    private Slider sldPrice;
+
+    @FXML
+    private Button btnRandom;
+
 
     private CameraModel model = new CameraModel();
 
@@ -63,6 +70,27 @@ public class CameraController {
 
         Add these values to the cbBrand & cbMode in initialize()
          */
+ChangeListener listener = new ChangeListener<Number>() {
+    @Override
+    public void changed(ObservableValue <? extends Number> observable, Number oldValue, Number newValue) {
+
+    }
+};
+        sldPrice.valueProperty().addListener(
+                new ChangeListener<Number>() {
+    @Override
+    public void changed(ObservableValue <? extends Number> observable, Number oldValue, Number newValue) {}
+                }
+        );
+//        sldPrice.valueProperty().addListener(
+//
+//                (observable, oldValue, newValue) ->
+//                {
+//            model.setPrice(newValue.doubleValue());
+//        }
+//        );
+
+        btnRandom.setOnAction(e -> System.out.println("Random Button Pressed")    );
 
     }
 
@@ -111,5 +139,11 @@ public class CameraController {
 
 
     }
+
+    /*
+            Add price attribute/instance variable to CameraModel
+                double range: 100-1000 (inc)
+                add getter and setter. set the restricturions in setter
+     */
 
 }

@@ -40,6 +40,8 @@ public class CameraModel {
     enum Modes{LOW_LIGHT, NIGHT, AUTO, MANUAL, GREYSCALE}
     private Modes mode = Modes.MANUAL;
 
+    private double price = 100;
+
     public String getColor() {
         return color;
     }
@@ -138,5 +140,16 @@ public class CameraModel {
                 ", brand=" + brand +
                 ", mode=" + mode +
                 '}';
+    }
+
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        if(price < 100 || price > 1000){
+            throw new IllegalArgumentException("Price is not valid. Must be between $100 and $1000");
+        }
+        this.price = price;
     }
 }
