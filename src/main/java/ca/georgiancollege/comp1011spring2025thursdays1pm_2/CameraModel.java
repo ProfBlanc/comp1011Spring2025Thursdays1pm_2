@@ -128,6 +128,10 @@ public class CameraModel {
 
             modes.add(m.toString());
         }
+
+
+        //modes.stream();  //shows that you can transform any List (Collection) to a Stream
+
         return modes;
     }
 

@@ -21,6 +21,9 @@ public class Question {
     }
 
     public void setCorrectAnswer(int correctAnswer) {
+        if(correctAnswer < 0 || correctAnswer >= options.size())
+            throw new IllegalArgumentException("Invalid correct answer");
+
         this.correctAnswer = correctAnswer;
     }
 
@@ -37,6 +40,6 @@ public class Question {
     public Question(String text, QuestionOption ...options) {
         setText(text);
         setOptions(options);
-        setCorrectAnswer(0);
+
     }
 }
