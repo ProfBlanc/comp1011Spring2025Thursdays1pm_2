@@ -19,7 +19,7 @@
          <children>
             <ImageView fx:id="imgAvatar" fitHeight="100.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@avatars/avatar1.png" />
+                  <Image url="@images/avatars/avatar1.png" />
                </image>
             </ImageView>
             <Label fx:id="txtNickname" prefHeight="46.0" prefWidth="254.0" text="Nickname">
