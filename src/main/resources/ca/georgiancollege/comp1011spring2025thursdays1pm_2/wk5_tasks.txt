@@ -1,0 +1,18 @@
+Partipant
+	String name
+	Image avatar
+	public static listOfNames
+	public static listOfAvatarPaths
+
+
+Question
+	many QuestionOptions
+		ArrayList<QuestionOption>
+	correct answer: int that represents index of arraylist QuestionOption
+	question text
+Quiz
+	many questions
+		ArrayList<Question>
+
+QuestionOption
+	OptionText:
