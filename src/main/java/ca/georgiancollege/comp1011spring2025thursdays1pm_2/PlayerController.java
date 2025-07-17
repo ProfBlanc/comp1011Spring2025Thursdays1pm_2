@@ -1,6 +1,7 @@
-package com.example.demo5;
+package ca.georgiancollege.comp1011spring2025thursdays1pm_2;
 
 import javafx.fxml.FXML;
+import javafx.scene.Node;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
@@ -32,6 +33,11 @@ public class PlayerController {
                 if (!row.isEmpty() && event.getClickCount() == 2) {
                     Player clickedPlayer = row.getItem();
                     showDetail(clickedPlayer);
+
+
+                   // ((Node)(event.getSource())).getScene().getWindow().hide();
+
+
                 }
             });
             return row;
@@ -74,6 +80,8 @@ public class PlayerController {
         alert.setHeaderText("Your turn");
         alert.setContentText("Attempt to set player details on another screen. Open and display this new scene");
         alert.showAndWait();
+
+
 
     }
 }

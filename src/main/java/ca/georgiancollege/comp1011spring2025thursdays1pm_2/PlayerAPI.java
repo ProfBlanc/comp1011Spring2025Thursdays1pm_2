@@ -1,4 +1,4 @@
-package com.example.demo5;
+package ca.georgiancollege.comp1011spring2025thursdays1pm_2;
 
 import com.google.gson.*;
 import java.io.IOException;
@@ -19,7 +19,7 @@ public class PlayerAPI {
         int page = 1;
 
         while (players.size() < maxPlayers) {
-            String url = BASE_URL + "?per_page=" + perPage + "&page=" + page;
+            String url = BASE_URL + "?per_page=" + perPage + "&page=" + page + "&search=jordan";
 
             HttpRequest request = HttpRequest.newBuilder()
                     .uri(URI.create(url))
@@ -34,6 +34,7 @@ public class PlayerAPI {
             }
 
             JsonObject root = JsonParser.parseString(response.body()).getAsJsonObject();
+
             JsonArray data = root.getAsJsonArray("data");
 
             for (JsonElement element : data) {

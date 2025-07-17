@@ -1,6 +1,7 @@
-package com.example.demo5;
+package ca.georgiancollege.comp1011spring2025thursdays1pm_2;
 
 public class Player {
+
     public int id;
     public String first_name;
     public String last_name;
