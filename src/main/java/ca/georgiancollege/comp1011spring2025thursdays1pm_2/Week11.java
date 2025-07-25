@@ -147,14 +147,14 @@ public class Week11 {
         Future<Integer> future = service.submit(callable);
 
         try{
-           int value =  future.get(1, TimeUnit.SECONDS);
+           int value =  future.get(2500, TimeUnit.MILLISECONDS);
             System.out.println("The value was " + value);
         }
         catch (Exception e){
             System.err.println(e.getClass().getName() + ": " + e.getMessage());
         }
-
+        service.shutdown();
 
     }
-    static void example7(){}
+
 }
